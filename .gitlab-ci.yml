@@ -1,0 +1,17 @@
+launch-job:
+  stage: build
+  script:
+    - . makedir.sh
+    - terraform init
+    - terraform apply -var=name=James -var=pipeline=${CI_PIPELINE_ID} -var=key=${pem} -auto-approve
+    - cat inventory
+    - ansible-playbook playbook.yaml
+    - mv terraform.tfstate /tmp/${GITLAB_USER_LOGIN}/terraform${CI_PIPELINE_ID}.tfstate
+
+destroy-job:
+  stage: test
+  script:
+    - terraform init
+    - mv /tmp/${GITLAB_USER_LOGIN}/terraform${CI_PIPELINE_ID}.tfstate terraform.tfstate
+    - terraform destroy -auto-approve
+  when: manual
