@@ -1,7 +1,7 @@
 <h2>Install gitlab server and set up runner (RHEL8):</h2><br>
-'''
+```
 sudo dnf install firewalld
-'''
+```
 
 
 <b>prerequisites:</b><br>
