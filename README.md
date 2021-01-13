@@ -33,7 +33,7 @@ Here you will enter your ip of your VM, an example below:<br>
 
 <b>Your Token:</b><br>
 ![token](https://imgur.com/NUukZYb.png)<br>
-Here you will enter your registration token:<br>
+Here you will enter your registration token, an example below:<br>
 ```Nx_2YeKNQJRx8eXdhxrV```<br>
 <b>Here is how the token is found:</b><br>
 Click where the red square is, this is the admin area:
