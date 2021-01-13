@@ -31,7 +31,7 @@ sudo gitlab-runner register
 Here you will enter your ip of your VM:<br>
 ```http://1.1.1.1```<br>
 
-<b>Your Token</b><br>
+<b>Your Token:</b><br>
 ![token](https://imgur.com/NUukZYb.png)<br>
 Here you will enter your registration token:<br>
 ```Nx_2YeKNQJRx8eXdhxrV```<br>
