@@ -52,17 +52,15 @@ If successfull, go back to admin area and then runners. You should see this:
 
 
 
-
-
-
-<b>Prerequisites:</b><br>
+<h2>Details of GitLab</h2>
+<h3>Prerequisites:</h3>
 WinRM <br>
 Python3 <br>
 Ansible <br>
 Terraform <br>
 <i>This can all be installed during the ci/cd pipeline if you make a stage for it</i><br>
 
-<b>ENV:</b><br>
+<h3>ENV:</h3>
 Variable AWS_ACCESS_KEY_ID <br>
 Variable AWS_SECRET_ACCESS_KEY <br>
 File pem #This is the contents of a decrypted pem file <br>
