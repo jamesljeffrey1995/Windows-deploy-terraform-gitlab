@@ -28,7 +28,7 @@ sudo gitlab-runner register
 <b>Your URL:</b></br>
 
 ![ip](https://i.imgur.com/x7ayoln.png)<br>
-Here you will enter your ip of your VM, and example below:<br>
+Here you will enter your ip of your VM, an example below:<br>
 ```http://1.1.1.1```<br>
 
 <b>Your Token:</b><br>
