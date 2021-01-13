@@ -55,7 +55,7 @@ If successfull, go back to admin area and then runners. You should see this:
 
 
 
-<b>prerequisites:</b><br>
+<b>Prerequisites:</b><br>
 WinRM <br>
 Python3 <br>
 Ansible <br>
