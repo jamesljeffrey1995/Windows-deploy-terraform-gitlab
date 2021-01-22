@@ -2,7 +2,7 @@
 <h3>Installing gitlab:</h3></br>
   
 ```
-sudo dnf install firewalld
+sudo dnf install -y firewalld
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
 sudo dnf install -y curl policycoreutils openssh-server perl
