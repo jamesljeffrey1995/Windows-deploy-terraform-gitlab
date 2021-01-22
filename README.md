@@ -1,12 +1,48 @@
-<h2>Install gitlab server and set up runner (RHEL8):</h2>
+<h1> Deploy a windows VM using Ansible, Terraform and Gitlab CI/CD </h1>
+<h2>Contents</h2>
 
-<h2>Details of GitLab</h2>
-<h3>Prerequisites:</h3>
+<ul>
+  <li>
+    
+   [Prerequisites](#prerequisites)
+    
+  </li>
+  <li>
+    
+   [Install gitlab server and set up runner](#install-gitlab-server-and-set-up-runner)
+  <ul>
+  <li>
+    
+   [Installing Gitlab](#installing-gitlab)
+    
+  </li>
+  <li>
+    
+   [How to use HTTPS with gitlab](#using-https-with-self-signed-certificate)
+    
+  </li>
+  <li>
+    
+   [Installing and registering runner:](#installing-and-registering-runner)
+    
+  </li>
+  </ul>
+  <li>
+  
+   [Enviroment Variables and Files](#enviroment-variables-and-files)
+     
+  </li>
+  </li>
+</ul>
+
+<h2>Prerequisites:</h2>
 WinRM <br>
 Python3 <br>
 Ansible <br>
 Terraform <br>
 <i>This can all be installed during the ci/cd pipeline if you make a stage for it</i><br>
+
+<h2>Install gitlab server and set up runner:</h2>
 
 <h3>Installing gitlab:</h3></br>
   
@@ -91,7 +127,7 @@ If successfull, go back to admin area and then runners. You should see this:
 
 
 
-<h3>ENV:</h3>
+<h3>Enviroment variables and files:</h3>
 Variable AWS_ACCESS_KEY_ID <br>
 Variable AWS_SECRET_ACCESS_KEY <br>
 File pem #This is the contents of a decrypted pem file <br>
