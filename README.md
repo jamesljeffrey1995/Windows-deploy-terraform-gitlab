@@ -15,8 +15,38 @@ sudo dnf install -y postfix
 sudo systemctl enable postfix
 sudo systemctl start postfix
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
-sudo EXTERNAL_URL="http://<YOUR-IP>" dnf install -y gitlab-ee
+sudo EXTERNAL_URL="https://<YOUR-IP>" dnf install -y gitlab-ee #change this to http if you dont want to use HTTPS
 ```
+<h2>Using HTTPS with self signed certificate</h2>
+
+```
+sudo dnf install -y nginx vim mlocate
+cd /etc/gitlab/ ; sudo openssl genrsa -aes128 -out server.key 2048
+sudo openssl req -new -days 3650 -key server.key -out server.csr
+sudo openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650
+```
+You will be prompted after pressing enter, enter with the relevant information such like the following image, if space is completely blank then it is to be left blank:
+
+![ssl](https://imgur.com/FYrbA7N.png)
+
+Then enter ```sudo chmod 400 server.*```<br>
+You then need to vim into the rb file ```sudo vim /etc/gitlab/gitlab.rb```, copy and paste the following code in the same format as the picture below:
+```
+letsencrypt['enable'] = false
+nginx['enable'] = true
+nginx['client_max_body_size'] = '250m'
+nginx['redirect_http_to_https'] = true
+nginx['ssl_certificate'] = "/etc/gitlab/server.crt"
+nginx['ssl_certificate_key'] = "/etc/gitlab/server.key"
+nginx['ssl_protocols'] = "TLSv1.2 TLSv1.3"
+```
+![gitRB](https://imgur.com/tvC1fxY.png)
+
+Save and quit, press esc and type ```:wq```, copy and paste ```sudo updatedb``` <br>
+Enter ```sudo gitlab-rake gitlab:check``` to check if everything is installed correctly. You can access the gitlab server by https://YOURIP
+
+
+
 <h3>Installing and registering runner:</h3>
 
 ```
