@@ -1,4 +1,4 @@
-<h1> Deploy a windows VM using Ansible, Terraform and Gitlab CI/CD </h1>
+<h1> Deploy a Windows VM using Ansible, Terraform and Gitlab CI/CD </h1>
 <h2>Contents</h2>
 
 <ul>
