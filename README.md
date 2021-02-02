@@ -67,6 +67,7 @@ sudo EXTERNAL_URL="https://<YOUR-IP>" dnf install -y gitlab-ee #change this to h
 ```
 sudo dnf install -y nginx vim mlocate
 cd /etc/gitlab/ ; sudo openssl genrsa -aes128 -out server.key 2048
+sudo openssl rsa -in server.key -out server.key
 sudo openssl req -new -days 3650 -key server.key -out server.csr
 sudo openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650
 ```
